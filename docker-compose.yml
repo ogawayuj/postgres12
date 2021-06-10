@@ -1,0 +1,14 @@
+version: '3'
+services:
+    db:
+        container_name: db-idem
+        build: .
+        ports:
+            - 5433:5432
+        environment:
+            TZ: Asia/Tokyo
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        volumes:
+            - ./db_data:/var/lib/postgresql/data
+            - ./db_tmp:/tmp/
